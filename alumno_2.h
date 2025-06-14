@@ -1,0 +1,6 @@
+#ifndef ALUMNO_2_H_INCLUDED
+#define ALUMNO_2_H_INCLUDED
+
+
+
+#endif // ALUMNO_2_H_INCLUDED
