@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1749917891 source:c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\header.c
+	<stdio.h>
+	<stdlib.h>
+	"Header.h"
+
+1749917891 c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\header.h
+
+1749918282 source:c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\main.c
+	<stdio.h>
+	"Header.h"
+	"ariel_marquez.h"
+
+1749918282 c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\ariel_marquez.h
+
