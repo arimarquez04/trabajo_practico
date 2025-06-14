@@ -1,3 +1,5 @@
+#include "funciones_grupo.h"
+
 int imagenRGB(const char *nomArch, Header header, Pixel **imagen, int color, int porcentaje)
 {
     Header headerL;
