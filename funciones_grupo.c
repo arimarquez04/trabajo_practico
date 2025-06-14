@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Header.h"
+#include "funciones_grupo.h"
 
 int grabarCabeceraArchivo(const char *nomArch, Header *header)
 {
@@ -8,7 +8,7 @@ int grabarCabeceraArchivo(const char *nomArch, Header *header)
 
     if(!arch)
     {
-        puts("Error al abrir el archivo2.");
+        puts("Error al abrir el archivo.");
         return ERR_ARCHIVO;
     }
 
@@ -82,7 +82,7 @@ int grabarImagenMemoria(const char *nomArch, Header *header, Pixel ***imagen)
 
     if(!arch)
     {
-        puts("Error al abrir el archivo3.");
+        puts("Error al abrir el archivo.");
         return ERR_ARCHIVO;
     }
 
@@ -91,7 +91,7 @@ int grabarImagenMemoria(const char *nomArch, Header *header, Pixel ***imagen)
     int inicio = header->inicioImagen;
     int padding = (4 - (ancho * 3) % 4) % 4;
 
-    *imagen = (Pixel **)malloc(alto * sizeof(Pixel *));
+    *imagen = malloc(alto * sizeof(Pixel *));
 
     if (!*imagen)
     {
@@ -215,6 +215,55 @@ int crearImagen(const char *nomArch, Header header, Pixel **imagen)
     }
 
     fclose(arch);
+
+    return TODO_OK;
+}
+
+int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCopia, Pixel ***imagenCopia)
+{
+    *headerCopia = headerOriginal;
+
+    if (headerOriginal.bloqueExtra && headerOriginal.inicioImagen > 54)
+    {
+        int bytesExtra = headerOriginal.inicioImagen - 54;
+        headerCopia->bloqueExtra = (unsigned char *)malloc(bytesExtra);
+        if (!headerCopia->bloqueExtra)
+        {
+            return ERR_MEMORIA;
+        }
+        memcpy(headerCopia->bloqueExtra, headerOriginal.bloqueExtra, bytesExtra);
+    }
+    else
+    {
+        headerCopia->bloqueExtra = NULL;
+    }
+
+    Pixel **nuevaImagen = (Pixel **)malloc(headerOriginal.alto * sizeof(Pixel *));
+    if (!nuevaImagen)
+    {
+        return ERR_MEMORIA;
+    }
+
+    for (int i = 0; i < headerOriginal.alto; i++)
+    {
+        nuevaImagen[i] = (Pixel *)malloc(headerOriginal.ancho * sizeof(Pixel));
+        if (!nuevaImagen[i])
+        {
+            for (int j = 0; j < i; j++)
+            {
+                free(nuevaImagen[j]);
+            }
+            free(nuevaImagen);
+            return ERR_MEMORIA;
+        }
+
+        for (int j = 0; j < headerOriginal.ancho; j++)
+        {
+            nuevaImagen[i][j] = imagenOriginal[i][j];
+        }
+    }
+
+    *imagenCopia = nuevaImagen;
 
     return TODO_OK;
 }
