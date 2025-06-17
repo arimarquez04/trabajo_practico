@@ -18,9 +18,6 @@ Entrega: Sí
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "funciones_stivala.h"
-#include "funciones_marquez.h"
-#include "funciones_paz.h"
 
 #define TODO_OK 0
 #define ERR_ARCHIVO 1
@@ -59,6 +56,10 @@ typedef struct
     unsigned char green;
     unsigned char red;
 } Pixel;
+
+#include "funciones_stivala.h"
+#include "funciones_marquez.h"
+#include "funciones_paz.h"
 
 int grabarCabeceraArchivo(const char *nomArch, Header *header);
 void mostrarCabeceraArchivoHexa(Header *header);
