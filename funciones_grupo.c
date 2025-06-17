@@ -151,7 +151,7 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free((*imagen)[i]);
     }
 
-    free(*imagen);
+    free(*imagen); 
     *imagen = NULL;
 
     if (header->bloqueExtra)
@@ -159,7 +159,6 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free(header->bloqueExtra);
         header->bloqueExtra = NULL;
     }
-
 
     return TODO_OK;
 }

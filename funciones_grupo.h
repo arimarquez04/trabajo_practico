@@ -19,6 +19,7 @@ Entrega: Sí
 #include <stdlib.h>
 #include <string.h>
 
+#define nombreGrupo "SODA"
 #define TODO_OK 0
 #define ERR_ARCHIVO 1
 #define ERR_MEMORIA 2
