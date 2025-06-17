@@ -39,28 +39,36 @@
 	<stdlib.h>
 	"funciones_grupo.h"
 
-1750164873 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.h
+1750168133 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"funciones_stivala.h"
+	"funciones_marquez.h"
 	"funciones_paz.h"
 
 1750163083 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.c
 	"funciones_grupo.h"
 
-1750163083 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\main.c
+1750164907 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\main.c
 	<stdio.h>
 	"funciones_grupo.h"
 	"funciones_stivala.h"
 
-1750163083 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.h
+1750168133 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.h
 	"funciones_grupo.h"
 
-1750164250 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.c
+1750164880 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.c
 	<stdio.h>
 	"funciones_grupo.h"
-	"funciones_paz.h"
 
 1750164873 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.h
 	"funciones_grupo.h"
+
+1750166911 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.h
+
+1750167953 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones_marquez.h"
 

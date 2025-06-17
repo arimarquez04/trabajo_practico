@@ -12,8 +12,8 @@ DNI: 44641005
 Entrega: Sí
 */
 
-#ifndef funciones_grupo_H
-#define funciones_grupo_H
+#ifndef funciones_grupo_H_INCLUDED
+#define funciones_grupo_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,4 +69,4 @@ void mostrarImagen(Header *header, Pixel ***imagen);
 int crearImagen(const char *nomArch, Header header, Pixel **imagen);
 int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCopia, Pixel ***imagenCopia);
 
-#endif //HEADER_H
+#endif //funciones_grupo_H_INCLUDED

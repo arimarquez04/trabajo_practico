@@ -7,4 +7,4 @@ int imagenRGB(const char *nomArch, Header header, Pixel **imagen, int color, int
 int imagenGrises(const char *nomArch, Header header, Pixel **imagen);
 int imagenEspejarH(const char *nomArch, Header header, Pixel **imagen);
 
-#endif // ALUMNO_1_H_INCLUDED
+#endif // funciones_stivala_H_INCLUDED
