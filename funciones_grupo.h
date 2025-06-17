@@ -18,6 +18,8 @@ Entrega: Sí
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "funciones_stivala.h"
+#include "funciones_marquez.h"
 #include "funciones_paz.h"
 
 #define TODO_OK 0
