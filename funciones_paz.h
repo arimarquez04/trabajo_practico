@@ -1,6 +1,8 @@
-#ifndef ALUMNO_2_H_INCLUDED
-#define ALUMNO_2_H_INCLUDED
+#ifndef FACUNDO_PAZ_H_INCLUDED
+#define FACUNDO_PAZ_H_INCLUDED
 
+#include "funciones_grupo.h"
 
+void pruebaPaz(void);
 
-#endif // ALUMNO_2_H_INCLUDED
+#endif // FACUNDO_PAZ_H_INCLUDED

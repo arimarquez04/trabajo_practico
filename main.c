@@ -4,6 +4,7 @@
 
 int main()
 {
+    pruebaPaz(); // Llamada a la función de prueba de Facundo Paz
     Header header;
     Pixel **imagen;
 

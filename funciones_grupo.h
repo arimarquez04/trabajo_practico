@@ -1,6 +1,16 @@
-//
-// Created by arima on 10/6/2025.
-//
+/*
+Apellido: Stivala Patiño, Joel Fabian
+DNI: 42825990
+Entrega: Sí
+-----------------
+Apellido: Marquez, Ariel Matias
+DNI: 45927524
+Entrega: Sí
+-----------------
+Apellido: Paz, Facundo Bautista
+DNI: 44641005
+Entrega: Sí
+*/
 
 #ifndef funciones_grupo_H
 #define funciones_grupo_H
@@ -8,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "funciones_paz.h"
 
 #define TODO_OK 0
 #define ERR_ARCHIVO 1
