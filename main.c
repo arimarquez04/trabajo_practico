@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "funciones_grupo.h"
-#include "funciones_stivala.h"
 
 int main()
 {
@@ -11,7 +10,6 @@ int main()
     grabarCabeceraArchivo("unlam_1.bmp", &header);
     mostrarCabeceraArchivoHexa(&header);
     grabarImagenMemoria("unlam_1.bmp", &header, &imagen);
-
     imagenEspejarH("1INVERTIR_H.bmp", header, imagen);
     imagenGrises("2GRIS.bmp", header, imagen);
     imagenRGB("3VERDE.bmp", header, imagen, VERDE, 20);
