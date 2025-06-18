@@ -15,7 +15,9 @@ int main()
     imagenRGB("3VERDE.bmp", header, imagen, VERDE, 20);
     imagenRGB("4AZUL.bmp", header, imagen, AZUL, 20);
     imagenRGB("5ROJO.bmp", header, imagen, ROJO, 50);
-    aumentarOReducirContraste(header, imagen, "unlam_1.bmp", FACTOR_REDUCIR, 50);
+    //aumentarOReducirContraste(header, imagen, "unlam_1.bmp", FACTOR_REDUCIR, 50);
+    recortar(header, imagen, "unlam_359.bmp", 20);
+    achicar(header, imagen, "unlam_359.bmp", 20);
     liberarImagen(&header, &imagen);
     return 0;
 }
