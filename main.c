@@ -18,6 +18,7 @@ int main()
     //aumentarOReducirContraste(header, imagen, "unlam_1.bmp", FACTOR_REDUCIR, 50);
     recortar(header, imagen, "unlam_359.bmp", 20);
     achicar(header, imagen, "unlam_359.bmp", 20);
+    comodin(header, imagen, "unlam_359.bmp");
     liberarImagen(&header, &imagen);
     return 0;
 }
