@@ -35,7 +35,12 @@ int aumentarOReducirContraste(Header header, Pixel **imagen, char nombre[], int 
     }
 
     char nombreArchivo[256];
-    strcpy(nombreArchivo, IMG_REDUCIR_CONTRASTE);
+    if(factor == FACTOR_AUMENTAR){
+        strcpy(nombreArchivo, IMG_AUMENTAR_CONTRASTE);
+    }
+    if(factor == FACTOR_REDUCIR){
+        strcpy(nombreArchivo, IMG_REDUCIR_CONTRASTE);
+    }
     strcat(nombreArchivo, nombre);
 
     crearImagen(nombreArchivo, headerNew, imagenNew);
