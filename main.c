@@ -6,11 +6,10 @@ int main()
 {
     Header header;
     Pixel **imagen;
-
-    grabarCabeceraArchivo("unlam_1.bmp", &header);
+    grabarCabeceraArchivo("unlam_359.bmp", &header);
     mostrarCabeceraArchivoHexa(&header);
     grabarImagenMemoria("unlam_1.bmp", &header, &imagen);
-
+    rotarDerecha("Rotarderecha.bmp", header, imagen);
     imagenEspejarH("1INVERTIR_H.bmp", header, imagen);
     imagenGrises("2GRIS.bmp", header, imagen);
     imagenRGB("3VERDE.bmp", header, imagen, VERDE, 20);

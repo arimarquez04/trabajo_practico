@@ -10,12 +10,12 @@ unsigned char  aplicarContraste(unsigned char valor, float factorContraste);
 
 int aumentarOReducirContraste(Header header, Pixel **imagen, char nombre[], int factor, float porcentaje) {
     if (porcentaje < 0 || porcentaje > 100) {
-        printf("El argumento porcentaje posee un valor inválido.\n");
+        printf("El argumento porcentaje posee un valor invï¿½lido.\n");
         return INVALID_ARGUMENT;
     }
 
     if (factor != FACTOR_AUMENTAR && factor != FACTOR_REDUCIR) {
-        printf("El argumento factor posee un valor inválido.\n");
+        printf("El argumento factor posee un valor invï¿½lido.\n");
         return INVALID_ARGUMENT;
     }
 
@@ -49,7 +49,7 @@ float calcularFactorContraste(float porcentaje, int factor) {
         return 1 - (porcentaje / 100.0f);
     }
 
-    return 1.0f; // Valor neutro por defecto si el factor es inválido
+    return 1.0f; // Valor neutro por defecto si el factor es invï¿½lido
 }
 unsigned char aplicarContraste(unsigned char valor, float factorContraste) {
     float calculado = (valor - 128) * factorContraste + 128;
@@ -57,6 +57,6 @@ unsigned char aplicarContraste(unsigned char valor, float factorContraste) {
     if (calculado < 0) calculado = 0;
     if (calculado > 255) calculado = 255;
 
-    return (unsigned char)(calculado + 0.5f); // redondeo al más cercano
+    return (unsigned char)(calculado + 0.5f); // redondeo al mï¿½s cercano
 }
 
