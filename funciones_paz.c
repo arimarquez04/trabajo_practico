@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "funciones_grupo.h"
 
-int rotarDerecha (const char* nombreArchivo, Header cabecera, Pixel **imagen)
+int rotarDerecha (const char* nombreArchivo, Header cabeceraOriginal, Pixel **imagenOriginal)
 {
     Header cabeceraCopia;
     Pixel **imagenCopia;
 
     // Copiar la imagen original
-    copiaImagen(cabecera, imagen, &cabeceraCopia, &imagenCopia);
+    copiaImagen(cabeceraOriginal, imagenOriginal, &cabeceraCopia, &imagenCopia);
 
     // Rotar la imagen 90 grados a la derecha
     Pixel **imagenRotada = (Pixel **)malloc(cabeceraCopia.ancho * sizeof(Pixel *));
@@ -25,15 +25,15 @@ int rotarDerecha (const char* nombreArchivo, Header cabecera, Pixel **imagen)
     }
 
     // Actualizar las dimensiones de la cabecera
-    cabeceraCopia.ancho = cabecera.alto;
-    cabeceraCopia.alto = cabecera.ancho;
+    cabeceraCopia.ancho = cabeceraOriginal.alto;
+    cabeceraCopia.alto = cabeceraOriginal.ancho;
 
     // Crear el archivo de imagen rotada
     crearImagen(nombreArchivo, cabeceraCopia, imagenRotada);
 
     // Liberar memoria
     liberarImagen(&cabeceraCopia, &imagenRotada);
-    liberarImagen(&cabecera, &imagenCopia);
+    //liberarImagen(&cabecera, &imagenCopia);
 
     return TODO_OK;
 }

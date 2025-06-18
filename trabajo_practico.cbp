@@ -35,6 +35,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funciones_grupo.h" />
+		<Unit filename="funciones_marquez.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_marquez.h" />
+		<Unit filename="funciones_paz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_paz.h" />
 		<Unit filename="funciones_stivala.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,3 +1,5 @@
+//entorno de pruebas
+
 #include <stdio.h>
 #include "funciones_grupo.h"
 #include "funciones_stivala.h"
@@ -6,7 +8,7 @@ int main()
 {
     Header header;
     Pixel **imagen;
-    grabarCabeceraArchivo("unlam_359.bmp", &header);
+    grabarCabeceraArchivo("unlam_1.bmp", &header);
     mostrarCabeceraArchivoHexa(&header);
     grabarImagenMemoria("unlam_1.bmp", &header, &imagen);
     rotarDerecha("Rotarderecha.bmp", header, imagen);
