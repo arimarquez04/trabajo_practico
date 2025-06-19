@@ -13,24 +13,31 @@
 
 1749918282 c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\ariel_marquez.h
 
-1749920698 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
+1750098281 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"funciones_grupo.h"
 
-1749920715 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
+1750097738 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1749933341 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
+1750098192 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
 	<stdio.h>
 	"funciones_grupo.h"
+	"funciones_marquez.h"
+	"funciones_paz.h"
 	"funciones_stivala.h"
 
-1749933281 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.h
+1749943846 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.h
 	"funciones_grupo.h"
 
-1749933264 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
+1749946426 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
 	"funciones_grupo.h"
+
+1749920317 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.h
+
+1749920317 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.h
 

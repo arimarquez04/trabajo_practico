@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include "funciones_grupo.h"
 
 int grabarCabeceraArchivo(const char *nomArch, Header *header)
@@ -267,3 +269,21 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
 
     return TODO_OK;
 }
+
+char* buscaNombreArchivo(int argc, char *argv[])
+{
+    char *nombreArch = NULL;
+
+    for(int i = 0 ; i < argc ; i++)
+    {
+        nombreArch = strstr(argv[i], ".bmp");
+        if(nombreArch && strcmpi(nombreArch, ".bmp") == 0)
+        {
+            nombreArch = argv[i];
+            //strcat(argv[i], "X");
+        }
+    }
+
+    return nombreArch;
+}
+

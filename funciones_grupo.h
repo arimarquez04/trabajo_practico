@@ -55,5 +55,6 @@ int liberarImagen(Header *header, Pixel ***imagen);
 void mostrarImagen(Header *header, Pixel ***imagen);
 int crearImagen(const char *nomArch, Header header, Pixel **imagen);
 int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCopia, Pixel ***imagenCopia);
+char* buscaNombreArchivo(int argc, char *argv[]);
 
 #endif //HEADER_H
