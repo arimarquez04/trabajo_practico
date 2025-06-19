@@ -82,8 +82,33 @@ int imagenEspejarH(const char *nomArch, Header header, Pixel **imagen)
         for(int j = 0 ; j < headerL.ancho / 2 ; j++)
         {
             pixel = imagenL[i][j];
-            imagenL[i][j] = imagenL[i][headerL.ancho - 1 - j];
-            imagenL[i][headerL.ancho - 1 - j] = pixel;
+            imagenL[i][j] = imagenL[headerL.alto - 1 - i][j];
+            imagenL[headerL.alto - 1 - i][j] = pixel;
+        }
+    }
+
+    crearImagen(nomArch, headerL, imagenL);
+    liberarImagen(&headerL, &imagenL);
+
+    return TODO_OK;
+}
+
+int imagenEspejarV(const char *nomArch, Header header, Pixel **imagen)
+{
+    Header headerL;
+    Pixel **imagenL;
+
+    copiaImagen(header, imagen, &headerL, &imagenL);
+
+    Pixel pixel;
+
+    for(int i = 0; i < headerL.alto / 2; i++)
+    {
+        for(int j = 0; j < headerL.ancho; j++)
+        {
+            pixel = imagenL[i][j];
+            imagenL[i][j] = imagenL[headerL.alto - 1 - i][j];
+            imagenL[headerL.alto - 1 - i][j] = pixel;
         }
     }
 
