@@ -153,7 +153,7 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free((*imagen)[i]);
     }
 
-    free(*imagen); 
+    free(*imagen);
     *imagen = NULL;
 
     if (header->bloqueExtra)
@@ -284,20 +284,30 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
     return TODO_OK;
 }
 
-char* buscaNombreArchivo(int argc, char *argv[])
+void buscaNombreArchivo(int argc, char *argv[], char **archivo1, char **archivo2, int *cntArchivos)
 {
-    char *nombreArch = NULL;
-
-    for(int i = 0 ; i < argc ; i++)
+    for (int i = 1; i < argc; i++)
     {
-        nombreArch = strstr(argv[i], ".bmp");
-        if(nombreArch && strcmpi(nombreArch, ".bmp") == 0)
+        if (strstr(argv[i], ".bmp") != NULL)
         {
-            nombreArch = argv[i];
-            //strcat(argv[i], "X");
+            if (!*archivo1)
+                *archivo1 = argv[i];
+            else if (!*archivo2)
+                *archivo2 = argv[i];
+            (*cntArchivos)++;
         }
     }
-
-    return nombreArch;
 }
+
+int obtenerValorParametro(const char* argumento)
+{
+    char* igual = strrchr(argumento, '=');
+
+    if (igual && *(igual + 1) != '\0')
+    {
+        return atoi(igual + 1);
+    }
+    return -1;
+}
+
 

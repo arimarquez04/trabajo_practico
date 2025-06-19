@@ -13,18 +13,21 @@
 
 1749918282 c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\ariel_marquez.h
 
-1750098281 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
+1750338401 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones_grupo.h"
 
-1750097738 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
+1750338475 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"funciones_stivala.h"
+	"funciones_marquez.h"
+	"funciones_paz.h"
 
-1750098192 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
+1750341214 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
 	<stdio.h>
 	"funciones_grupo.h"
 	"funciones_marquez.h"
@@ -34,14 +37,17 @@
 1749943846 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.h
 	"funciones_grupo.h"
 
-1749946426 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
+1750341046 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
 	"funciones_grupo.h"
 
-<<<<<<< HEAD
-1749920317 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.h
+1749946426 D
 
-1749920317 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.h
-=======
+1750336400 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.h
+	"funciones_grupo.h"
+
+1750336400 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.h
+	"funciones_grupo.h"
+
 1750255476 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.c
 	<stdio.h>
 	<stdlib.h>
@@ -78,5 +84,18 @@
 	<stdlib.h>
 	"funciones_marquez.h"
 	"funciones_grupo.h"
->>>>>>> 644b70e1865aad8a07d7f705a6fab1f4b69c5d79
+
+1750255476 b70e1865aad8a07d7f705a6fab1f4b69c5d79
+
+1750337530 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\bmpmanipuleitor.c
+
+1750336400 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones_marquez.h"
+	"funciones_grupo.h"
+
+1750336400 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.c
+	<stdio.h>
+	"funciones_grupo.h"
 
