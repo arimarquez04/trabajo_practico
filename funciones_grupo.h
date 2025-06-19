@@ -70,5 +70,7 @@ int liberarImagen(Header *header, Pixel ***imagen);
 void mostrarImagen(Header *header, Pixel ***imagen);
 int crearImagen(const char *nomArch, Header header, Pixel **imagen);
 int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCopia, Pixel ***imagenCopia);
+void buscaNombreArchivo(int argc, char *argv[], char **archivo1, char **archivo2, int *cntArchivos);
+int obtenerValorParametro(const char* argumento);
 
 #endif //funciones_grupo_H_INCLUDED

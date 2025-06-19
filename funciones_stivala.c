@@ -16,6 +16,21 @@ int imagenRGB(const char *nomArch, Header header, Pixel **imagen, int color, int
     float factorIncr = 1 + (float)porcentaje/100;
     unsigned int nuevoPixel;
 
+    char nombreArchivo[256];
+    switch(color)
+    {
+        case ROJO:
+            strcpy(nombreArchivo, "SODA_tonalidad-roja_");
+        break;
+        case VERDE:
+            strcpy(nombreArchivo, "SODA_tonalidad-verde_");
+        break;
+        case AZUL:
+            strcpy(nombreArchivo, "SODA_tonalidad-azul_");
+        break;
+    }
+    strcat(nombreArchivo, nomArch);
+
     for(int i = 0 ; i < headerL.alto ; i++)
     {
         for(int j = 0 ; j < headerL.ancho ; j++)
@@ -38,7 +53,7 @@ int imagenRGB(const char *nomArch, Header header, Pixel **imagen, int color, int
         }
     }
 
-    crearImagen(nomArch, headerL, imagenL);
+    crearImagen(nombreArchivo, headerL, imagenL);
     liberarImagen(&headerL, &imagenL);
 
     return TODO_OK;
@@ -61,8 +76,11 @@ int imagenGrises(const char *nomArch, Header header, Pixel **imagen)
             imagenL[i][j].blue = gris;
         }
     }
+    char nombreArchivo[256];
+    strcpy(nombreArchivo, "SODA_escala-de-grises_");
+    strcat(nombreArchivo, nomArch);
 
-    crearImagen(nomArch, headerL, imagenL);
+    crearImagen(nombreArchivo, headerL, imagenL);
     liberarImagen(&headerL, &imagenL);
 
     return TODO_OK;
@@ -77,9 +95,9 @@ int imagenEspejarH(const char *nomArch, Header header, Pixel **imagen)
 
     Pixel pixel;
 
-    for(int i = 0 ; i < headerL.alto ; i++)
+    for (int i = 0 ; i < headerL.alto ; i++)
     {
-        for(int j = 0 ; j < headerL.ancho / 2 ; j++)
+        for (int j = 0 ; j < headerL.ancho / 2 ; j++)
         {
             pixel = imagenL[i][j];
             imagenL[i][j] = imagenL[i][headerL.ancho - 1 - j];
@@ -87,7 +105,40 @@ int imagenEspejarH(const char *nomArch, Header header, Pixel **imagen)
         }
     }
 
-    crearImagen(nomArch, headerL, imagenL);
+    char nombreArchivo[256];
+    strcpy(nombreArchivo, "SODA_espejar-horizontal_");
+    strcat(nombreArchivo, nomArch);
+
+    crearImagen(nombreArchivo, headerL, imagenL);
+    liberarImagen(&headerL, &imagenL);
+
+    return TODO_OK;
+}
+
+
+int imagenEspejarV(const char *nomArch, Header header, Pixel **imagen)
+{
+    Header headerL;
+    Pixel **imagenL;
+
+    copiaImagen(header, imagen, &headerL, &imagenL);
+
+    Pixel pixel;
+
+    for(int i = 0; i < headerL.alto / 2; i++)
+    {
+        for(int j = 0; j < headerL.ancho; j++)
+        {
+            pixel = imagenL[i][j];
+            imagenL[i][j] = imagenL[headerL.alto - 1 - i][j];
+            imagenL[headerL.alto - 1 - i][j] = pixel;
+        }
+    }
+    char nombreArchivo[256];
+    strcpy(nombreArchivo, "SODA_espejar-vertical_");
+    strcat(nombreArchivo, nomArch);
+
+    crearImagen(nombreArchivo, headerL, imagenL);
     liberarImagen(&headerL, &imagenL);
 
     return TODO_OK;

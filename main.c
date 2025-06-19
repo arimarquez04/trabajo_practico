@@ -2,24 +2,65 @@
 #include "funciones_grupo.h"
 #include "funciones_stivala.h"
 #include "funciones_marquez.h"
-int main()
+#include "funciones_paz.h"
+
+int main(int argc, char *argv[])
 {
-    Header header;
-    Pixel **imagen;
-    grabarCabeceraArchivo("unlam_359.bmp", &header);
-    mostrarCabeceraArchivoHexa(&header);
-    grabarImagenMemoria("unlam_1.bmp", &header, &imagen);
-    rotarDerecha("Rotarderecha.bmp", header, imagen);
-    imagenEspejarH("1INVERTIR_H.bmp", header, imagen);
-    imagenGrises("2GRIS.bmp", header, imagen);
-    imagenRGB("3VERDE.bmp", header, imagen, VERDE, 20);
-    imagenRGB("4AZUL.bmp", header, imagen, AZUL, 20);
-    imagenRGB("5ROJO.bmp", header, imagen, ROJO, 50);
-    aumentarOReducirContraste(header, imagen, "unlam_359.bmp", FACTOR_REDUCIR, 50);
-    aumentarOReducirContraste(header, imagen, "unlam_359.bmp", FACTOR_AUMENTAR, 50);
-    recortar(header, imagen, "unlam_359.bmp", 20);
-    achicar(header, imagen, "unlam_359.bmp", 20);
-    comodin(header, imagen, "unlam_359.bmp");
-    liberarImagen(&header, &imagen);
+    Header header1, header2;
+    Pixel **imagen1, **imagen2;
+
+    char *archivo1 = NULL;
+    char *archivo2 = NULL;
+    int cntArchivos = 0;
+
+    buscaNombreArchivo(argc, argv, &archivo1, &archivo2, &cntArchivos);
+
+    if(!archivo1)
+    {
+        printf("No se especific� una imagen por par�metro");
+        return INVALID_ARGUMENT;
+    }
+
+    grabarCabeceraArchivo(archivo1, &header1);
+    grabarImagenMemoria(archivo1, &header1, &imagen1);
+
+    if(archivo2)
+    {
+        grabarCabeceraArchivo(archivo2, &header2);
+        grabarImagenMemoria(archivo2, &header2, &imagen2);
+    }
+
+    for(int i = 1 ; i < argc ; i++)
+    {
+        if(strcmpi(argv[i], "--escala-de-grises") == 0)
+            imagenGrises(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--espejar-horizontal") == 0)
+            imagenEspejarH(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--espejar-vertical") == 0)
+            imagenEspejarV(archivo1, header1, imagen1);
+        else if(_strnicmp(argv[i], "--tonalidad-roja=", 17) == 0)
+            imagenRGB(archivo1, header1, imagen1, ROJO, obtenerValorParametro(argv[i]));
+        else if(_strnicmp(argv[i], "--tonalidad-verde=", 18) == 0)
+            imagenRGB(archivo1, header1, imagen1, VERDE, obtenerValorParametro(argv[i]));
+        else if(_strnicmp(argv[i], "--tonalidad-azul=", 17) == 0)
+            imagenRGB(archivo1, header1, imagen1, AZUL, obtenerValorParametro(argv[i]));
+        else if(strcmpi(argv[i], "--rotar-derecha") == 0)
+            rotarDerecha(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
+            rotarIzquierda(archivo1, header1, imagen1);
+
+        /*AGREGAR AC� LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
+        LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
+
+        else if(strstr(argv[i], ".bmp") == NULL)
+        {
+            printf("%s NO es una funcionalidad valida.\n", argv[i]);
+        }
+    }
+
+    liberarImagen(&header1, &imagen1);
+    if(archivo2)
+        liberarImagen(&header2, &imagen2);
+
     return 0;
 }

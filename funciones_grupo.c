@@ -15,6 +15,8 @@ Entrega: Sí
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include "funciones_grupo.h"
 
 int grabarCabeceraArchivo(const char *nomArch, Header *header)
@@ -120,6 +122,12 @@ int grabarImagenMemoria(const char *nomArch, Header *header, Pixel ***imagen)
         if (!(*imagen)[i])
         {
             //AGREGAR CODIGO PARA LIBERAR LAS FILAS QUE SE CREARON HASTA ESE MOMENTO EN CASO DE FALLAR
+            for(int j = 0; j < i; j++)
+            {
+                free((*imagen)[j]);
+            }
+            free(*imagen);
+            ( *imagen) = NULL;
             return ERR_MEMORIA;
         }
     }
@@ -151,7 +159,7 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free((*imagen)[i]);
     }
 
-    free(*imagen); 
+    free(*imagen);
     *imagen = NULL;
 
     if (header->bloqueExtra)
@@ -268,6 +276,7 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
                 free(nuevaImagen[j]);
             }
             free(nuevaImagen);
+            nuevaImagen = NULL;
             return ERR_MEMORIA;
         }
 
@@ -278,6 +287,38 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
     }
 
     *imagenCopia = nuevaImagen;
-
+    for(int i = 0; i < headerOriginal.alto; i++)
+    {
+        free(nuevaImagen[i]);
+    }
+    free(nuevaImagen);
     return TODO_OK;
 }
+
+void buscaNombreArchivo(int argc, char *argv[], char **archivo1, char **archivo2, int *cntArchivos)
+{
+    for (int i = 1; i < argc; i++)
+    {
+        if (strstr(argv[i], ".bmp") != NULL)
+        {
+            if (!*archivo1)
+                *archivo1 = argv[i];
+            else if (!*archivo2)
+                *archivo2 = argv[i];
+            (*cntArchivos)++;
+        }
+    }
+}
+
+int obtenerValorParametro(const char* argumento)
+{
+    char* igual = strrchr(argumento, '=');
+
+    if (igual && *(igual + 1) != '\0')
+    {
+        return atoi(igual + 1);
+    }
+    return -1;
+}
+
+
