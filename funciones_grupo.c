@@ -122,6 +122,12 @@ int grabarImagenMemoria(const char *nomArch, Header *header, Pixel ***imagen)
         if (!(*imagen)[i])
         {
             //AGREGAR CODIGO PARA LIBERAR LAS FILAS QUE SE CREARON HASTA ESE MOMENTO EN CASO DE FALLAR
+            for(int j = 0; j < i; j++)
+            {
+                free((*imagen)[j]);
+            }
+            free(*imagen);
+            ( *imagen) = NULL;
             return ERR_MEMORIA;
         }
     }
@@ -270,6 +276,7 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
                 free(nuevaImagen[j]);
             }
             free(nuevaImagen);
+            nuevaImagen = NULL;
             return ERR_MEMORIA;
         }
 
@@ -280,7 +287,11 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
     }
 
     *imagenCopia = nuevaImagen;
-
+    for(int i = 0; i < headerOriginal.alto; i++)
+    {
+        free(nuevaImagen[i]);
+    }
+    free(nuevaImagen);
     return TODO_OK;
 }
 

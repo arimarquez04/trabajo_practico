@@ -5,35 +5,45 @@ int rotarDerecha (const char* nombreArchivo, Header cabeceraOriginal, Pixel **im
 {
     Header cabeceraCopia;
     Pixel **imagenCopia;
-
-    // Copiar la imagen original
     copiaImagen(cabeceraOriginal, imagenOriginal, &cabeceraCopia, &imagenCopia);
 
-    // Rotar la imagen 90 grados a la derecha
-    Pixel **imagenRotada = (Pixel **)malloc(cabeceraCopia.ancho * sizeof(Pixel *));
-    for (int i = 0; i < cabeceraCopia.ancho; i++)
-    {
-        imagenRotada[i] = (Pixel *)malloc(cabeceraCopia.alto * sizeof(Pixel));
-    }
+    imagenCopia = (Pixel **)malloc(cabeceraOriginal.ancho * sizeof(Pixel *));
 
-    for (int i = 0; i < cabeceraCopia.alto; i++)
+    for (int i = 0; i < cabeceraOriginal.ancho; i++)
     {
-        for (int j = 0; j < cabeceraCopia.ancho; j++)
+        imagenCopia[i] = (Pixel *)malloc(cabeceraOriginal.alto * sizeof(Pixel));
+        if (!imagenCopia[i])
         {
-            imagenRotada[j][cabeceraCopia.alto - 1 - i] = imagenCopia[i][j];
+            for (int j = 0; j < i; j++)
+            {
+                free(imagenCopia[j]);
+            }
+            free(imagenCopia);
+            imagenCopia = NULL;
+            return ERR_MEMORIA;
         }
     }
 
-    // Actualizar las dimensiones de la cabecera
+    for (int i = 0; i < cabeceraOriginal.alto; i++)
+    {
+        for (int j = 0; j < cabeceraOriginal.ancho; j++)
+        {
+            imagenCopia[j][cabeceraOriginal.alto - 1 - i] = imagenOriginal[i][j];
+        }
+    }
+
     cabeceraCopia.ancho = cabeceraOriginal.alto;
     cabeceraCopia.alto = cabeceraOriginal.ancho;
+    cabeceraCopia.resHorizontal = cabeceraOriginal.resVertical;
+    cabeceraCopia.resVertical = cabeceraOriginal.resHorizontal;
 
-    // Crear el archivo de imagen rotada
-    crearImagen(nombreArchivo, cabeceraCopia, imagenRotada);
+    char nombreaImagenNueva [255] = nombreGrupo;
+    strcat( nombreaImagenNueva, "_rotar-derecha_");
+    strcat(nombreaImagenNueva, nombreArchivo);
 
-    // Liberar memoria
-    liberarImagen(&cabeceraCopia, &imagenRotada);
-    //liberarImagen(&cabecera, &imagenCopia);
+    crearImagen(nombreaImagenNueva, cabeceraCopia, imagenCopia);
+
+    liberarImagen(&cabeceraCopia, &imagenCopia);
 
     return TODO_OK;
 }

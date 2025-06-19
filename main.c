@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     if(!archivo1)
     {
-        printf("No se especificó una imagen por parámetro");
+        printf("No se especificï¿½ una imagen por parï¿½metro");
         return INVALID_ARGUMENT;
     }
 
@@ -44,7 +44,12 @@ int main(int argc, char *argv[])
             imagenRGB(archivo1, header1, imagen1, VERDE, obtenerValorParametro(argv[i]));
         else if(_strnicmp(argv[i], "--tonalidad-azul=", 17) == 0)
             imagenRGB(archivo1, header1, imagen1, AZUL, obtenerValorParametro(argv[i]));
-        /*AGREGAR ACÁ LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
+        else if(strcmpi(argv[i], "--rotar-derecha") == 0)
+            rotarDerecha(archivo1, header1, imagen1);
+        //else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
+        //    rotarIzquierda(archivo1, header1, imagen1);
+
+        /*AGREGAR ACï¿½ LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
         LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
 
         else if(strstr(argv[i], ".bmp") == NULL)
