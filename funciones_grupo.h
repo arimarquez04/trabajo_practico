@@ -1,14 +1,25 @@
-//
-// Created by arima on 10/6/2025.
-//
+/*
+Apellido: Stivala Patiño, Joel Fabian
+DNI: 42825990
+Entrega: Sí
+-----------------
+Apellido: Marquez, Ariel Matias
+DNI: 45927524
+Entrega: Sí
+-----------------
+Apellido: Paz, Facundo Bautista
+DNI: 44641005
+Entrega: Sí
+*/
 
-#ifndef funciones_grupo_H
-#define funciones_grupo_H
+#ifndef funciones_grupo_H_INCLUDED
+#define funciones_grupo_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#define nombreGrupo "SODA"
 #define TODO_OK 0
 #define ERR_ARCHIVO 1
 #define ERR_MEMORIA 2
@@ -47,6 +58,10 @@ typedef struct
     unsigned char red;
 } Pixel;
 
+#include "funciones_stivala.h"
+#include "funciones_marquez.h"
+#include "funciones_paz.h"
+
 int grabarCabeceraArchivo(const char *nomArch, Header *header);
 void mostrarCabeceraArchivoHexa(Header *header);
 
@@ -57,4 +72,4 @@ int crearImagen(const char *nomArch, Header header, Pixel **imagen);
 int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCopia, Pixel ***imagenCopia);
 char* buscaNombreArchivo(int argc, char *argv[]);
 
-#endif //HEADER_H
+#endif //funciones_grupo_H_INCLUDED

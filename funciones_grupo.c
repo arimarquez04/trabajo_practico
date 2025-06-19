@@ -1,3 +1,18 @@
+/*
+Apellido: Stivala Patiño, Joel Fabian
+DNI: 42825990
+Entrega: Sí
+-----------------
+Apellido: Marquez, Ariel Matias
+DNI: 45927524
+Entrega: Sí
+-----------------
+Apellido: Paz, Facundo Bautista
+DNI: 44641005
+Entrega: Sí
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -138,7 +153,7 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free((*imagen)[i]);
     }
 
-    free(*imagen);
+    free(*imagen); 
     *imagen = NULL;
 
     if (header->bloqueExtra)
@@ -146,7 +161,6 @@ int liberarImagen(Header *header, Pixel ***imagen)
         free(header->bloqueExtra);
         header->bloqueExtra = NULL;
     }
-
 
     return TODO_OK;
 }
