@@ -46,8 +46,8 @@ int main(int argc, char *argv[])
             imagenRGB(archivo1, header1, imagen1, AZUL, obtenerValorParametro(argv[i]));
         else if(strcmpi(argv[i], "--rotar-derecha") == 0)
             rotarDerecha(archivo1, header1, imagen1);
-        //else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
-        //    rotarIzquierda(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
+            rotarIzquierda(archivo1, header1, imagen1);
 
         /*AGREGAR AC� LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
         LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
