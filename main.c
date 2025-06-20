@@ -48,6 +48,43 @@ int main(int argc, char *argv[])
             rotarDerecha(archivo1, header1, imagen1);
         else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
             rotarIzquierda(archivo1, header1, imagen1);
+        else if (strncmp(argv[i], "--aumentar-contraste", 20) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int valor = atoi(igual + 1);
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_AUMENTAR, valor);
+            } else {
+                printf("Falta el valor para --aumentar-contraste\n");
+            }
+        }
+        else if (strncmp(argv[i], "--reducir-contraste", 20) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int valor = atoi(igual + 1);
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_REDUCIR, valor);
+            } else {
+                printf("Falta el valor para --reducir-contraste\n");
+            }
+        }
+        else if (strncmp(argv[i], "--recortar", 10) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int porcentaje = atoi(igual + 1);
+                recortar(header1, imagen1, archivo1, porcentaje);
+            } else {
+                printf("Falta el valor para --recortar\n");
+            }
+        }
+        else if (strncmp(argv[i], "--achicar", 9) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int porcentaje = atoi(igual + 1);
+                achicar(header1, imagen1, archivo1, porcentaje);
+            } else {
+                printf("Falta el valor para --achicar\n");
+            }
+        }
+
 
         /*AGREGAR AC� LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
         LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
