@@ -59,40 +59,39 @@ int main(int argc, char *argv[])
             else
                 concatenarHorizontal(archivo1, header1, imagen1, archivo2, header2, imagen2);
         else if (strncmp(argv[i], "--aumentar-contraste", 20) == 0) {
-            char *igual = strchr(argv[i], '=');
-            if (igual != NULL) {
-                int valor = atoi(igual + 1);
-                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_AUMENTAR, valor);
+            int parametro = obtenerValorParametro(argv[i]);
+            if(parametro >0){
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_AUMENTAR, (float) parametro);
             } else {
                 printf("Falta el valor para --aumentar-contraste\n");
             }
         }
-        else if (strncmp(argv[i], "--reducir-contraste", 20) == 0) {
-            char *igual = strchr(argv[i], '=');
-            if (igual != NULL) {
-                int valor = atoi(igual + 1);
-                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_REDUCIR, valor);
+        else if (strncmp(argv[i], "--reducir-contraste", 19) == 0) {
+            int parametro = obtenerValorParametro(argv[i]);
+            if(parametro >0){
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_REDUCIR, (float) parametro);
             } else {
                 printf("Falta el valor para --reducir-contraste\n");
             }
         }
         else if (strncmp(argv[i], "--recortar", 10) == 0) {
-            char *igual = strchr(argv[i], '=');
-            if (igual != NULL) {
-                int porcentaje = atoi(igual + 1);
-                recortar(header1, imagen1, archivo1, porcentaje);
+            int parametro = obtenerValorParametro(argv[i]);
+            if(parametro >0){
+                recortar(header1, imagen1, archivo1, (float) parametro);
             } else {
                 printf("Falta el valor para --recortar\n");
             }
         }
         else if (strncmp(argv[i], "--achicar", 9) == 0) {
-            char *igual = strchr(argv[i], '=');
-            if (igual != NULL) {
-                int porcentaje = atoi(igual + 1);
-                achicar(header1, imagen1, archivo1, porcentaje);
+            int parametro = obtenerValorParametro(argv[i]);
+            if(parametro >0){
+                achicar(header1, imagen1, archivo1, parametro);
             } else {
                 printf("Falta el valor para --achicar\n");
             }
+        }
+        else if (strncmp(argv[i], "--comodin", 9) == 0) {
+            comodin(header1, imagen1, archivo1);
         }
         else if(strstr(argv[i], ".bmp") == NULL)
         {
