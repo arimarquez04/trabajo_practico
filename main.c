@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "funciones_grupo.h"
+#include "funciones_stivala.h"
 #include "funciones_marquez.h"
 #include "funciones_paz.h"
-#include "funciones_stivala.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     if(!archivo1)
     {
-        printf("No se especificó una imagen por parámetro");
+        printf("No se especificï¿½ una imagen por parï¿½metro");
         return INVALID_ARGUMENT;
     }
 
@@ -44,9 +44,56 @@ int main(int argc, char *argv[])
             imagenRGB(archivo1, header1, imagen1, VERDE, obtenerValorParametro(argv[i]));
         else if(_strnicmp(argv[i], "--tonalidad-azul=", 17) == 0)
             imagenRGB(archivo1, header1, imagen1, AZUL, obtenerValorParametro(argv[i]));
-        /*AGREGAR ACÁ LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
-        LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
-
+        else if(strcmpi(argv[i], "--rotar-derecha") == 0)
+            rotarDerecha(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
+            rotarIzquierda(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--concatenar-vertical") == 0)
+            if(cntArchivos < 2)
+                printf("Falta una imagen para concatenar verticalmente.\n");
+            else
+            concatenarVertical(archivo1, header1, imagen1, archivo2, header2, imagen2);
+        else if(strcmpi(argv[i], "--concatenar-horizontal") == 0)
+            if(cntArchivos < 2)
+                printf("Falta una imagen para concatenar horizontalmente.\n");
+            else
+                concatenarHorizontal(archivo1, header1, imagen1, archivo2, header2, imagen2);
+        else if (strncmp(argv[i], "--aumentar-contraste", 20) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int valor = atoi(igual + 1);
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_AUMENTAR, valor);
+            } else {
+                printf("Falta el valor para --aumentar-contraste\n");
+            }
+        }
+        else if (strncmp(argv[i], "--reducir-contraste", 20) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int valor = atoi(igual + 1);
+                aumentarOReducirContraste(header1, imagen1, archivo1, FACTOR_REDUCIR, valor);
+            } else {
+                printf("Falta el valor para --reducir-contraste\n");
+            }
+        }
+        else if (strncmp(argv[i], "--recortar", 10) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int porcentaje = atoi(igual + 1);
+                recortar(header1, imagen1, archivo1, porcentaje);
+            } else {
+                printf("Falta el valor para --recortar\n");
+            }
+        }
+        else if (strncmp(argv[i], "--achicar", 9) == 0) {
+            char *igual = strchr(argv[i], '=');
+            if (igual != NULL) {
+                int porcentaje = atoi(igual + 1);
+                achicar(header1, imagen1, archivo1, porcentaje);
+            } else {
+                printf("Falta el valor para --achicar\n");
+            }
+        }
         else if(strstr(argv[i], ".bmp") == NULL)
         {
             printf("%s NO es una funcionalidad valida.\n", argv[i]);

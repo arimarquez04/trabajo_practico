@@ -13,47 +13,34 @@
 
 1749918282 c:\users\carla\onedrive\escritorio\kakuu\prueba tp git\trabajo_practico\ariel_marquez.h
 
-1750338401 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
+1749920698 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones_grupo.h"
+
+1749920715 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1749933341 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
+	<stdio.h>
+	"funciones_grupo.h"
+	"funciones_stivala.h"
+
+1749933281 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.h
+	"funciones_grupo.h"
+
+1749933264 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
+	"funciones_grupo.h"
+
+1750437137 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones_grupo.h"
 
-1750338475 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_grupo.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"funciones_stivala.h"
-	"funciones_marquez.h"
-	"funciones_paz.h"
-
-1750341214 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\main.c
-	<stdio.h>
-	"funciones_grupo.h"
-	"funciones_marquez.h"
-	"funciones_paz.h"
-	"funciones_stivala.h"
-
-1749943846 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.h
-	"funciones_grupo.h"
-
-1750341046 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_stivala.c
-	"funciones_grupo.h"
-
-1749946426 D
-
-1750336400 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.h
-	"funciones_grupo.h"
-
-1750336400 c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.h
-	"funciones_grupo.h"
-
-1750255476 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.c
-	<stdio.h>
-	<stdlib.h>
-	"funciones_grupo.h"
-
-1750255476 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.h
+1750423557 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_grupo.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -61,41 +48,32 @@
 	"funciones_marquez.h"
 	"funciones_paz.h"
 
-1750255476 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.h
+1750423557 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.h
 	"funciones_grupo.h"
 
-1750255476 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.h
+1750423557 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.h
 	"funciones_grupo.h"
 
-1750256300 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.h
+1750435670 c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.h
 	"funciones_grupo.h"
 
-1750255476 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.c
+1750423557 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_stivala.c
 	"funciones_grupo.h"
 
-1750256136 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\main.c
+1750436935 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_paz.c
+	<stdio.h>
+	"funciones_grupo.h"
+
+1750435977 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\main.c
 	<stdio.h>
 	"funciones_grupo.h"
 	"funciones_stivala.h"
 	"funciones_marquez.h"
+	"funciones_paz.h"
 
-1750255476 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.c
+1750423557 source:c:\users\facup\onedrive\escritorio\facu\unlam\materias actuales\topicos de programacion\trabajo_practico\funciones_marquez.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones_marquez.h"
-	"funciones_grupo.h"
-
-1750255476 b70e1865aad8a07d7f705a6fab1f4b69c5d79
-
-1750337530 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\bmpmanipuleitor.c
-
-1750336400 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_marquez.c
-	<stdio.h>
-	<stdlib.h>
-	"funciones_marquez.h"
-	"funciones_grupo.h"
-
-1750336400 source:c:\users\joelf\onedrive\escritorio\proyecto c\trabajo_practico\funciones_paz.c
-	<stdio.h>
 	"funciones_grupo.h"
 
