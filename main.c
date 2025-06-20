@@ -48,6 +48,16 @@ int main(int argc, char *argv[])
             rotarDerecha(archivo1, header1, imagen1);
         else if(strcmpi(argv[i], "--rotar-izquierda") == 0)
             rotarIzquierda(archivo1, header1, imagen1);
+        else if(strcmpi(argv[i], "--concatenar-vertical") == 0)
+            if(cntArchivos < 2)
+                printf("Falta una imagen para concatenar verticalmente.\n");
+            else
+            concatenarVertical(archivo1, header1, imagen1, archivo2, header2, imagen2);
+        else if(strcmpi(argv[i], "--concatenar-horizontal") == 0)
+            if(cntArchivos < 2)
+                printf("Falta una imagen para concatenar horizontalmente.\n");
+            else
+                concatenarHorizontal(archivo1, header1, imagen1, archivo2, header2, imagen2);
         else if (strncmp(argv[i], "--aumentar-contraste", 20) == 0) {
             char *igual = strchr(argv[i], '=');
             if (igual != NULL) {
@@ -84,11 +94,6 @@ int main(int argc, char *argv[])
                 printf("Falta el valor para --achicar\n");
             }
         }
-
-
-        /*AGREGAR AC� LOS ELSEIF NECESARIOS PARA LAS FUNCIONES QUE USTEDES DESARROLLARON.
-        LA QUE IMPRIME EL MENSAJE DEBE SER LA ULTIMA*/
-
         else if(strstr(argv[i], ".bmp") == NULL)
         {
             printf("%s NO es una funcionalidad valida.\n", argv[i]);

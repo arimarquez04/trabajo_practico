@@ -287,11 +287,14 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
     }
 
     *imagenCopia = nuevaImagen;
+    /*revisar:
     for(int i = 0; i < headerOriginal.alto; i++)
     {
         free(nuevaImagen[i]);
     }
     free(nuevaImagen);
+    nuevaImagen = NULL;*/
+
     return TODO_OK;
 }
 

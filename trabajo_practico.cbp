@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="--concatenar-horizontal unlam_1.bmp unlam_1.bmp" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -35,6 +36,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funciones_grupo.h" />
+		<Unit filename="funciones_marquez.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_marquez.h" />
+		<Unit filename="funciones_paz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones_paz.h" />
 		<Unit filename="funciones_stivala.c">
 			<Option compilerVar="CC" />
 		</Unit>
