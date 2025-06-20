@@ -73,4 +73,6 @@ int copiaImagen(Header headerOriginal, Pixel **imagenOriginal, Header *headerCop
 void buscaNombreArchivo(int argc, char *argv[], char **archivo1, char **archivo2, int *cntArchivos);
 int obtenerValorParametro(const char* argumento);
 
+int bmpmanipuleitor(int argc, char *argv[]);
+
 #endif //funciones_grupo_H_INCLUDED
